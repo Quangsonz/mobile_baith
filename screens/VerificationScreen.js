@@ -17,10 +17,8 @@ const VerificationScreen = ({ navigation, route }) => {
 
   const handleNext = () => {
     if (code.length === 4) {
-      // Proceed to the next screen (e.g., Home screen) after verification
-      // For now, we'll just log the code
-      console.log('Verification code:', code);
-      // navigation.navigate('HomeScreen'); // Uncomment when you have a Home screen
+      // Proceed to the LocationScreen after verification
+      navigation.navigate('LocationScreen');
     }
   };
 
@@ -32,7 +30,7 @@ const VerificationScreen = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
       {/* Header with Back Arrow */}
-      <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+      <TouchableOpacity onPress={() => navigation.navigate('LocationScreen')} style={styles.backButton}>
         <Icon name="arrow-back" size={30} color="#000" />
       </TouchableOpacity>
 
